@@ -2,7 +2,7 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	font-family: Helvetica;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
 }
 
@@ -19,22 +19,65 @@ li {
 
 a {
 	text-decoration: none;
-	color: blue;
-	padding: 3px;
 }
 
-a:hover {
-	text-decoration: underline;
+.rep-url a {
+	text-decoration: none;
+	color: blue;
+	padding: 3px;
+	border-bottom: solid 1px transparent;
+	transition: border-bottom-color .2s ease-in-out;
+}
+
+.rep-url a:hover {
+    border-bottom: solid 1px blue;
 }
 
 h1,
-h2 {
+h2,
+h4 {
 	text-align: center;
+	padding: 15px 0px;
+	margin: 0;
 }
 
-.container {
+h1 {
+	font-size: 1.75em;
+	padding-top: 30px;
+}
+
+h2 {
+	font-size: 1.25em;
+	font-weight: 500;
+}
+
+h4 a {
+	font-size: 1em;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 30px;
+}
+
+h4 a:hover {
+	cursor: pointer;
+	color: grey;
+	transition: all .15s ease;
+}
+
+hr {
+	margin-top: 20px;
+}
+
+.main {
 	display: flex;
 	justify-content: center;
+}
+
+.heading {
+	background-color: #fafbfc;
+	height: 200px;
+	margin-bottom: 40px;
+	border-bottom: 1px lightgrey solid;
 }
 
 .rep-url,
@@ -49,13 +92,18 @@ h2 {
 .rep-lang,
 .rep-star,
 .rep-fork {
-	margin: 10px 30px 15px 0px;
+	margin: 10px 30px 10px 0px;
+}
+
+.rep-save {
+	font-size: .75em;
+	font-weight: 600;
 }
 
 .rep-save:hover {
 	cursor: pointer;
-	color: lightgrey;
-
+	color: grey;
+	transition: all .15s ease;
 }
 
 .loading {

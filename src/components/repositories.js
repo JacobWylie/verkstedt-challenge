@@ -45,18 +45,23 @@ class Repositories extends Component {
 		// Makes component wait for axios to finish before trying to render to page
 		// Waits until Object is no longer empty
 		if (Object.keys(this.props.repositories).length < 1) {
-			return <div className="loading">Loading...</div>
+			return <div className="loading main">Loading...</div>
 		}
 
 		const today = moment().format('MMMM Do YYYY');
 		const weekAgo = moment().subtract(7,'days').format('MMMM Do YYYY');
 		return (
 			<div>
-				<h1>Trending Repositories Created in the Last Week on Github</h1>
-				<h2>Week of {weekAgo} - {today}</h2>
-				<ul>
-					{this.renderRepositories()}
-				</ul>
+				<div className="heading">
+					<h1>Trending Repositories Created in the Last Week on Github</h1>
+					<h2>Week of {weekAgo} - {today}</h2>
+					<h4><Link to={'/saved'}>See Your Saved Repositories</Link></h4>
+				</div>
+				<div className="main">
+					<ul>
+						{this.renderRepositories()}
+					</ul>
+				</div>
 			</div>
 			
 		);
