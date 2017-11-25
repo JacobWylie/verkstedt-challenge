@@ -8,8 +8,8 @@ export default function(state = {}, action) {
 	// Use lodash .mapKeys() to take a property out of an array record and create
 	// an object where the id is the key and the value is the account info.
 	case FETCH_REPOSITORIES:
-		return _.mapkeys(action.payload.data,items, '_id');
-		
+		return _.mapKeys(action.payload.data.items, 'id');
+
 	// Catch default and return state
 	default:
 		return state;
