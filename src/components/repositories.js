@@ -20,20 +20,23 @@ class Repositories extends Component {
 		return _.map(this.props.repositories, repository => {
 			return (
 				<li className="" key={repository.id}>
-					<div>
+					<div className="rep-url">
 						<a href={repository.html_url}>
-							{repository.owner.login} / {repository.name}
+							{repository.owner.login} / <span className="rep-name">{repository.name}</span>
 						</a>
 					</div>
-					<div>
+					<div className="rep-desc">
 						{repository.description}
 					</div>
 					<div>
-						<span>Language: {repository.language}</span>
-						<span>{repository.stargazers_count}</span>
-						<span>{repository.forks_count}</span>
+						<span className="rep-lang">{repository.language}</span>
+						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
+						<span className="rep-fork">&#9739; {repository.forks_count}</span>
+						<span className="rep-save">Save Repository</span>
 					</div>
+					<hr/>
 				</li>
+				
 			)
 		})
 	}
@@ -42,15 +45,18 @@ class Repositories extends Component {
 		// Makes component wait for axios to finish before trying to render to page
 		// Waits until Object is no longer empty
 		if (Object.keys(this.props.repositories).length < 1) {
-			return <div>Loading...</div>
+			return <div className="loading">Loading...</div>
 		}
 
 		const today = moment().format('MMMM Do YYYY');
 		const weekAgo = moment().subtract(7,'days').format('MMMM Do YYYY');
 		return (
-			<div>Trending Repositories Created in the Last Week on Github
-				<div>Week of {weekAgo} - {today}</div>
-				{this.renderRepositories()}
+			<div>
+				<h1>Trending Repositories Created in the Last Week on Github</h1>
+				<h2>Week of {weekAgo} - {today}</h2>
+				<ul>
+					{this.renderRepositories()}
+				</ul>
 			</div>
 			
 		);
