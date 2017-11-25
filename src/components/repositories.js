@@ -45,7 +45,12 @@ class Repositories extends Component {
 		// Makes component wait for axios to finish before trying to render to page
 		// Waits until Object is no longer empty
 		if (Object.keys(this.props.repositories).length < 1) {
-			return <div className="loading main">Loading...</div>
+			return (
+				<div className="main">
+					<div className="loader"></div>
+					<div><p>Loading...</p></div>
+				</div>
+			)
 		}
 
 		const today = moment().format('MMMM Do YYYY');
