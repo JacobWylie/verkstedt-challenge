@@ -9,6 +9,7 @@ html {
 ul {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 100px;
 }
 
 li {
@@ -21,17 +22,19 @@ a {
 	text-decoration: none;
 }
 
+img {
+	padding-top: 20px;
+}
+
 h1,
 h2,
 h4 {
-	text-align: center;
 	padding: 15px 0px;
 	margin: 0;
 }
 
 h1 {
 	font-size: 2em;
-	padding-top: 30px;
 	font-weight: 500;
 }
 
@@ -65,8 +68,9 @@ hr {
 
 .heading {
 	background-color: #fafbfc;
+	text-align: center;
 	min-height: 200px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	border-bottom: 1px lightgrey solid;
 }
 

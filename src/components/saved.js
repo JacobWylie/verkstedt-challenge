@@ -38,6 +38,7 @@ class Saved extends Component {
 		return (
 			<div>
 				<div className="heading">
+					<Link to={'/'}><img src="/img/github.png"/></Link>
 					<h1>Your Saved Repositories</h1>
 					<h4><Link to={'/'}>Back to Trending</Link></h4>
 				</div>

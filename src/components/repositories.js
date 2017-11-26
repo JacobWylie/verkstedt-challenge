@@ -14,10 +14,19 @@ class Repositories extends Component {
 		this.props.fetchRepositories();
 	}
 
+	constructor() {
+    	super();
+    	this.state = {save: 'Save Repository'}
+    }
+
 	// Render repositories to page
 	renderRepositories() {
 		// Repositories are now an object (not array) and require lodash _.map()
 		return _.map(this.props.repositories, repository => {
+			// Check to see if repository has been saved and change button
+			!localStorage.hasOwnProperty(repository.id) ? 
+    			this.state = {save: 'Save Repository'} :
+    			this.state = {save: 'Saved'}
 			return (
 				<li className="" key={repository.id}>
 					<div className="rep-url">
@@ -32,7 +41,7 @@ class Repositories extends Component {
 						{repository.language ? <span className="rep-lang">{repository.language}</span> : ""}
 						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
 						<span className="rep-fork">&#9739; {repository.forks_count}</span>
-						<span onClick={this.onSave.bind(this, repository)} className="rep-save">Save Repository</span>
+						<span onClick={this.onSave.bind(this, repository)} className="rep-save">{this.state.save}</span>
 					</div>
 					<hr/>
 				</li>
@@ -43,7 +52,8 @@ class Repositories extends Component {
 
 	// Save a repository to localstorage. Id is passed to even handler and 'this' context maintained
 	onSave(repository) {
-		this.props.saveRepository(repository);
+		this.props.saveRepository(repository)
+		this.setState({ save: "Saved" })
 	}
 
 	render() {
@@ -63,7 +73,8 @@ class Repositories extends Component {
 		return (
 			<div>
 				<div className="heading">
-					<h1>Trending Repositories Created in the Last Week on Github</h1>
+					<img src="/img/github.png"/>
+					<h1>Trending Repositories Created in the Last Week</h1>
 					<h2>{weekAgo} - {today}</h2>
 					<h4><Link to={'/saved'}>See Your Saved Repositories</Link></h4>
 				</div>
@@ -74,7 +85,7 @@ class Repositories extends Component {
 				</div>
 			</div>
 			
-		);
+		)
 	}
 }
 
