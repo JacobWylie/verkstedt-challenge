@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import { fetchSaved } from '../actions';
+import { fetchSaved, unsaveRepository } from '../actions';
 
 class Saved extends Component {
 
@@ -26,13 +26,20 @@ class Saved extends Component {
 						{repository.language ? <span className="rep-lang">{repository.language}</span> : ""}
 						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
 						<span className="rep-fork">&#9739; {repository.forks_count}</span>
-						<span className="rep-save">Saved</span>
+						<span onClick={this.unsave.bind(this, repository)} className="rep-save">Unsave</span>
 					</div>
 					<hr/>
 				</li>
 			)
 		})
 	}
+
+	// Delete repository from localStorage
+	unsave(repository) {
+		this.props.unsaveRepository(repository);
+	}
+
+	
 
 	render() {
 		return (
@@ -58,7 +65,7 @@ function mapStateToProps(state) {
 }
 
 // Wire up action creeator so it's available to component
-export default connect(mapStateToProps, { fetchSaved })(Saved);
+export default connect(mapStateToProps, { fetchSaved, unsaveRepository })(Saved);
 
 
 

@@ -62,8 +62,10 @@ class Repositories extends Component {
 		if (Object.keys(this.props.repositories).length < 1) {
 			return (
 				<div className="main">
+					<div className="loader-container">
 					<div className="loader"></div>
 					<div><p>Loading...</p></div>
+					</div>
 				</div>
 			)
 		}

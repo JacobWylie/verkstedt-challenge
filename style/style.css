@@ -62,8 +62,8 @@ hr {
 }
 
 .main {
-	display: flex;
-	justify-content: center;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .heading {
@@ -121,9 +121,13 @@ hr {
 /*******************
 Loading Icon
 *******************/
+
 p {
-	margin-top: 290px;
-	z-index: 999;
+	margin-left: -25px;
+}
+
+.loader-container {
+	margin-left: 50%;
 }
 
 .loader,
@@ -140,6 +144,7 @@ p {
   text-align: center;
   margin-top: 205px;
   margin-right: -30px;
+  margin-bottom: 40px;
   font-size: 11px;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -187,17 +192,17 @@ p {
 }
 
 
-@media (min-width: 900px) {
+@media (max-width: 1000px) {
 	.main {
-		max-width: 50%;
-		margin: 0 auto;
-	}
-	.loader {
-		margin-left: 35px;
+		width: 80%;
 	}
 }
 
-
+@media (max-width: 600px) {
+	.main {
+		width: 95%;
+	}
+}
 
 
 

@@ -4,6 +4,7 @@ import moment from 'moment';
 export const FETCH_REPOSITORIES = 'fetch_repositories';
 export const SAVE_REPOSITORY = 'save_respository';
 export const FETCH_SAVED = 'fetch_saved';
+export const UNSAVE_REPOSITORY = 'unsave_repository';
 
 // The date one week ago
 const date = moment().subtract(7,'days').format('YYYY-MM-DD');
@@ -43,6 +44,40 @@ export function fetchSaved() {
 		type: FETCH_SAVED,
 		payload: request
 	}
-
-
 }
+
+export function unsaveRepository(repository) {
+	localStorage.removeItem(repository.id);
+	const request = repository.id; 
+
+	return {
+		type: UNSAVE_REPOSITORY,
+		payload: request
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
