@@ -1,7 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
+import { fetchSaved } from '../actions';
 
-export default class App extends Component {
+class Saved extends Component {
+
+	componentDidMount() {
+		this.props.fetchSaved();
+		console.log(this.props)
+	}
+
+	renderSaved() {
+	}
+
 	render() {
 		return (
 			<div className="heading">
@@ -11,3 +23,16 @@ export default class App extends Component {
 		);
 	}
 }
+
+// To consume from application lecel state
+function mapStateToProps(state) {
+	return { repositories: state.repositories }
+}
+
+// Wire up action creeator so it's available to component
+export default connect(mapStateToProps, { fetchSaved })(Saved);
+
+
+
+
+

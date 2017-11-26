@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import _ from 'lodash';
 // Action creator that GETs repositories
-import { fetchRepositories } from '../actions';
+import { fetchRepositories, saveRepository } from '../actions';
 
 class Repositories extends Component {
 	// AJAX request when component is rendered
@@ -14,7 +14,7 @@ class Repositories extends Component {
 		this.props.fetchRepositories();
 	}
 
-	// Helper function to render repositories to page
+	// Render repositories to page
 	renderRepositories() {
 		// Repositories are now an object (not array) and require lodash _.map()
 		return _.map(this.props.repositories, repository => {
@@ -32,13 +32,18 @@ class Repositories extends Component {
 						<span className="rep-lang">{repository.language}</span>
 						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
 						<span className="rep-fork">&#9739; {repository.forks_count}</span>
-						<span className="rep-save">Save Repository</span>
+						<span onClick={this.onSave.bind(this, repository)} className="rep-save">Save Repository</span>
 					</div>
 					<hr/>
 				</li>
 				
 			)
 		})
+	}
+
+	// Save a repository to localstorage. Id is passed to even handler and 'this' context maintained
+	onSave(repository) {
+		this.props.saveRepository(repository);
 	}
 
 	render() {
@@ -59,7 +64,7 @@ class Repositories extends Component {
 			<div>
 				<div className="heading">
 					<h1>Trending Repositories Created in the Last Week on Github</h1>
-					<h2>Week of {weekAgo} - {today}</h2>
+					<h2>{weekAgo} - {today}</h2>
 					<h4><Link to={'/saved'}>See Your Saved Repositories</Link></h4>
 				</div>
 				<div className="main">
@@ -79,7 +84,7 @@ function mapStateToProps(state) {
 }
 
 // Wire up action creeator so it's available to component
-export default connect(mapStateToProps, { fetchRepositories })(Repositories);
+export default connect(mapStateToProps, { fetchRepositories, saveRepository })(Repositories);
 
 
 

@@ -7,7 +7,6 @@ html {
 }
 
 ul {
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 }
@@ -15,22 +14,11 @@ ul {
 li {
 	list-style: none;
 	margin-top: 10px;
+	margin-right: 20px;
 }
 
 a {
 	text-decoration: none;
-}
-
-.rep-url a {
-	text-decoration: none;
-	color: blue;
-	padding: 3px;
-	border-bottom: solid 1px transparent;
-	transition: border-bottom-color .2s ease-in-out;
-}
-
-.rep-url a:hover {
-    border-bottom: solid 1px blue;
 }
 
 h1,
@@ -42,7 +30,7 @@ h4 {
 }
 
 h1 {
-	font-size: 1.75em;
+	font-size: 2em;
 	padding-top: 30px;
 	font-weight: 500;
 }
@@ -57,12 +45,13 @@ h4 a {
 	font-weight: 300;
 	color: black;
 	margin-bottom: 30px;
+	border-bottom: solid 1px transparent;
+	transition: all .2s ease-in-out;
 }
 
 h4 a:hover {
 	cursor: pointer;
-	color: grey;
-	transition: all .15s ease;
+	border-bottom: solid 1px grey;
 }
 
 hr {
@@ -76,9 +65,21 @@ hr {
 
 .heading {
 	background-color: #fafbfc;
-	height: 200px;
+	min-height: 200px;
 	margin-bottom: 40px;
 	border-bottom: 1px lightgrey solid;
+}
+
+.rep-url a {
+	text-decoration: none;
+	color: blue;
+	padding: 3px;
+	border-bottom: solid 1px transparent;
+	transition: border-bottom-color .2s ease-in-out;
+}
+
+.rep-url a:hover {
+    border-bottom: solid 1px blue;
 }
 
 .rep-url,
@@ -97,13 +98,17 @@ hr {
 }
 
 .rep-save {
-	font-size: .75em;
+	font-size: .65em;
 	font-weight: 600;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #d9ecff;
 }
 
 .rep-save:hover {
 	cursor: pointer;
 	color: grey;
+	background-color: #eef6ff;
 	transition: all .15s ease;
 }
 
