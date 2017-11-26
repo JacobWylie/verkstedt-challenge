@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_REPOSITORIES, FETCH_SAVED } from '../actions';
+import { FETCH_REPOSITORIES } from '../actions';
 // Receive previous accounts state and modify on request
 // Default state is empty object
 export default function(state = {}, action) {
@@ -10,11 +10,6 @@ export default function(state = {}, action) {
 	case FETCH_REPOSITORIES:
 		return _.mapKeys(action.payload.data.items, 'id');
 
-	case FETCH_SAVED:
-		return { ...state, [action.payload.id]: action.payload}
-
-
-	// Catch default and return state
 	default:
 		return state;
 	}

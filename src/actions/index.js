@@ -33,7 +33,11 @@ export function saveRepository(repository) {
 
 // Return saved repositories
 export function fetchSaved() {
-	const request = localStorage;
+	const savedRepositories = {}
+	const saved = Object.keys(localStorage).forEach(key => {
+		savedRepositories[key] = JSON.parse(localStorage.getItem(key))
+	})
+	const request = savedRepositories;
 
 	return {
 		type: FETCH_SAVED,

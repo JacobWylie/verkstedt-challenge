@@ -103,6 +103,7 @@ hr {
 	padding: 5px;
 	border-radius: 5px;
 	background-color: #d9ecff;
+	float: right;
 }
 
 .rep-save:hover {
@@ -182,7 +183,15 @@ p {
 }
 
 
-
+@media (min-width: 900px) {
+	.main {
+		max-width: 50%;
+		margin: 0 auto;
+	}
+	.loader {
+		margin-left: 35px;
+	}
+}
 
 
 

@@ -29,7 +29,7 @@ class Repositories extends Component {
 						{repository.description}
 					</div>
 					<div>
-						<span className="rep-lang">{repository.language}</span>
+						{repository.language ? <span className="rep-lang">{repository.language}</span> : ""}
 						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
 						<span className="rep-fork">&#9739; {repository.forks_count}</span>
 						<span onClick={this.onSave.bind(this, repository)} className="rep-save">Save Repository</span>

@@ -8,17 +8,44 @@ class Saved extends Component {
 
 	componentDidMount() {
 		this.props.fetchSaved();
-		console.log(this.props)
 	}
 
 	renderSaved() {
+		return _.map(this.props.saved, repository => {
+			return (
+				<li className="" key={repository.id}>
+					<div className="rep-url">
+						<a href={repository.html_url}>
+							{repository.owner.login} / <span className="rep-name">{repository.name}</span>
+						</a>
+					</div>
+					<div className="rep-desc">
+						{repository.description}
+					</div>
+					<div>
+						{repository.language ? <span className="rep-lang">{repository.language}</span> : ""}
+						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
+						<span className="rep-fork">&#9739; {repository.forks_count}</span>
+						<span className="rep-save">Saved</span>
+					</div>
+					<hr/>
+				</li>
+			)
+		})
 	}
 
 	render() {
 		return (
-			<div className="heading">
-				<h1>Your Saved Repositories</h1>
-				<h4><Link to={'/'}>Back to Trending</Link></h4>
+			<div>
+				<div className="heading">
+					<h1>Your Saved Repositories</h1>
+					<h4><Link to={'/'}>Back to Trending</Link></h4>
+				</div>
+				<div className="main">
+						<ul>
+							{this.renderSaved()}
+						</ul>
+				</div>
 			</div>
 		);
 	}
@@ -26,7 +53,7 @@ class Saved extends Component {
 
 // To consume from application lecel state
 function mapStateToProps(state) {
-	return { repositories: state.repositories }
+	return { saved: state.saved }
 }
 
 // Wire up action creeator so it's available to component
