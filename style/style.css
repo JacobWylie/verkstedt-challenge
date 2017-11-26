@@ -24,6 +24,7 @@ a {
 
 img {
 	padding-top: 20px;
+	min-height: 128px;
 }
 
 h1,

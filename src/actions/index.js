@@ -1,10 +1,12 @@
 import axios from 'axios';
 import moment from 'moment';
+import _ from 'lodash';
 
 export const FETCH_REPOSITORIES = 'fetch_repositories';
 export const SAVE_REPOSITORY = 'save_respository';
 export const FETCH_SAVED = 'fetch_saved';
 export const UNSAVE_REPOSITORY = 'unsave_repository';
+export const SEARCH_REPOSITORIES = 'search_repositories';
 
 // The date one week ago
 const date = moment().subtract(7,'days').format('YYYY-MM-DD');
@@ -15,7 +17,7 @@ const ROOT_URL = `https://api.github.com/search/repositories?sort=stars&order=de
 // Get repositories from Github API and return payload from the action
 export function fetchRepositories() {
 	const request = axios.get(ROOT_URL);
-
+	
 	return {
 		type: FETCH_REPOSITORIES,
 		payload: request
@@ -55,6 +57,7 @@ export function unsaveRepository(repository) {
 		payload: request
 	}
 }
+
 
 
 

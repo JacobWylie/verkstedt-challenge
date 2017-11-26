@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import _ from 'lodash';
-// Action creator that GETs repositories
+// Action creators
 import { fetchRepositories, saveRepository } from '../actions';
+import SearchBar from './search';
 
 class Repositories extends Component {
 	// AJAX request when component is rendered
@@ -16,7 +17,10 @@ class Repositories extends Component {
 
 	constructor() {
     	super();
-    	this.state = {save: 'Save Repository'}
+    	this.state = {
+    		save: 'Save Repository',
+    		// repositories: this.props.repositories
+    	}
     }
 
 	// Render repositories to page
@@ -81,6 +85,7 @@ class Repositories extends Component {
 					<h4><Link to={'/saved'}>See Your Saved Repositories</Link></h4>
 				</div>
 				<div className="main">
+					{/*<SearchBar />*/}
 					<ul>
 						{this.renderRepositories()}
 					</ul>
