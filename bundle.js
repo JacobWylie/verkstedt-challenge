@@ -57672,7 +57672,7 @@
 						_react2.default.createElement(
 							_reactRouterDom.Link,
 							{ to: '/' },
-							_react2.default.createElement('img', { src: '/img/github.png' })
+							_react2.default.createElement('img', { src: 'github.png' })
 						),
 						_react2.default.createElement(
 							'h1',
