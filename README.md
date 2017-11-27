@@ -38,7 +38,7 @@ conventions and unit tests.
 ```
 
 git clone https://github.com/JacobWylie/verkstedt-challenge.git
-cd SPO-form
+cd verkstedt-challenge
 
 ```
 
