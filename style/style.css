@@ -9,16 +9,19 @@ html {
 ul {
 	display: flex;
 	flex-direction: column;
+	
 	margin-bottom: 100px;
 }
 
 li {
 	list-style: none;
-	margin-top: 15px;
+	margin-top: 30px;
 	margin-right: 20px;
 	background-color: rgba(206, 206, 206, 0.1)	;
 	padding: 20px;
 	border-radius: 10px;
+	border: 1px solid rgba(154, 154, 154, 0.2);
+	box-shadow: 2px 2px 5px #888888;
 }
 
 a {
@@ -51,15 +54,15 @@ h2 {
 
 h4 {
 	margin-bottom: 15px;
-	letter-spacing: 0.05em;
 }
 
 h4 a {
-	font-size: 1em;
+	font-size: 1.1em;
 	font-weight: 300;
 	color: black;
 	border-bottom: solid 1px transparent;
 	transition: all .2s ease-in-out;
+	letter-spacing: 0.05em;
 }
 
 h4 a:hover {
@@ -72,8 +75,9 @@ hr {
 }
 
 .main {
-	width: 50%;
 	margin: 0 auto;
+	width: 50%;
+	max-width: 600px;
 }
 
 .heading {
