@@ -57431,7 +57431,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'heading' },
-						_react2.default.createElement('img', { src: 'github.png' }),
+						_react2.default.createElement('img', { src: 'https://i.imgur.com/kfzHmYa.png' }),
 						_react2.default.createElement(
 							'h1',
 							null,
@@ -57672,7 +57672,7 @@
 						_react2.default.createElement(
 							_reactRouterDom.Link,
 							{ to: '/' },
-							_react2.default.createElement('img', { src: 'github.png' })
+							_react2.default.createElement('img', { src: 'https://i.imgur.com/kfzHmYa.png' })
 						),
 						_react2.default.createElement(
 							'h1',
