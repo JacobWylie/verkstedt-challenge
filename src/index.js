@@ -25,8 +25,8 @@ ReactDOM.render(
     	<div>
     		{/* Allows specific routing without rendering all / routes */}
     		<Switch>
-    			<Route path = '/trending/saved' component={Saved} />
-    			<Route path = '/trending' component={Repositories} />
+    			<Route path = '/saved' component={Saved} />
+    			<Route path = '/' component={Repositories} />
     		</Switch>
     	</div>
     </BrowserRouter>
