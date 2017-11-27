@@ -26,7 +26,7 @@ class Saved extends Component {
 						{repository.language ? <span className="rep-lang">{repository.language}</span> : ""}
 						<span className="rep-star">&#9733; {repository.stargazers_count}</span>
 						<span className="rep-fork">&#9739; {repository.forks_count}</span>
-						<span onClick={this.unsave.bind(this, repository)} className="rep-save">Unsave</span>
+						<span onClick={this.unsave.bind(this, repository)} className="rep-save unsave">Unsave</span>
 					</div>
 					<hr/>
 				</li>

@@ -14,8 +14,11 @@ ul {
 
 li {
 	list-style: none;
-	margin-top: 10px;
+	margin-top: 15px;
 	margin-right: 20px;
+	background-color: rgba(206, 206, 206, 0.1)	;
+	padding: 20px;
+	border-radius: 10px;
 }
 
 a {
@@ -31,24 +34,30 @@ h1,
 h2,
 h4 {
 	padding: 15px 0px;
-	margin: 0;
+	margin: 0 15px 0 15px;
 }
 
 h1 {
 	font-size: 2em;
 	font-weight: 500;
+	letter-spacing: 0.04em;
 }
 
 h2 {
 	font-size: 1.25em;
 	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+
+h4 {
+	margin-bottom: 15px;
+	letter-spacing: 0.05em;
 }
 
 h4 a {
 	font-size: 1em;
 	font-weight: 300;
 	color: black;
-	margin-bottom: 30px;
 	border-bottom: solid 1px transparent;
 	transition: all .2s ease-in-out;
 }
@@ -79,6 +88,7 @@ hr {
 	text-decoration: none;
 	color: blue;
 	padding: 3px;
+	font-size: 1.1em;
 	border-bottom: solid 1px transparent;
 	transition: border-bottom-color .2s ease-in-out;
 }
@@ -89,7 +99,8 @@ hr {
 
 .rep-url,
 .rep-desc {
-	margin: 15px 0px;
+	margin: 30px 0px;
+	letter-spacing: 0.03em;
 }
 
 .rep-name {
@@ -99,22 +110,47 @@ hr {
 .rep-lang,
 .rep-star,
 .rep-fork {
-	margin: 10px 30px 10px 0px;
+	margin: 20px 30px 20px 0px;
+}
+
+.rep-lang {
+	font-size: 1.05em;
+	letter-spacing: 0.1em;
+}
+
+.star {
+	color: yellow;
+}
+
+.fork {
+	color: #9a9999;
 }
 
 .rep-save {
-	font-size: .65em;
-	font-weight: 600;
-	padding: 5px;
+	color: white;
+	font-size: .7em;
+	font-weight: 500;
+	letter-spacing: .08em;
+	padding: 6px;
 	border-radius: 5px;
-	background-color: #d9ecff;
 	float: right;
+}
+
+.save {
+	background-color:#0085ff;
+}
+
+.saved {
+	background-color: #00c300;
+}
+
+.unsave {
+	background-color: #ec1616;
 }
 
 .rep-save:hover {
 	cursor: pointer;
-	color: grey;
-	background-color: #eef6ff;
+	opacity: .8;
 	transition: all .15s ease;
 }
 
@@ -197,11 +233,21 @@ p {
 	.main {
 		width: 80%;
 	}
+
+	li {
+		margin-left: -20px;
+	}
 }
 
 @media (max-width: 600px) {
 	.main {
-		width: 95%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 450px) {
+	li {
+		font-size: .8em;
 	}
 }
 
