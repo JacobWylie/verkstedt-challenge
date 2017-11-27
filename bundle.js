@@ -57671,7 +57671,7 @@
 						{ className: 'heading' },
 						_react2.default.createElement(
 							_reactRouterDom.Link,
-							{ to: '/' },
+							{ to: '/verkstedt-challenge' },
 							_react2.default.createElement('img', { src: 'https://i.imgur.com/kfzHmYa.png' })
 						),
 						_react2.default.createElement(
@@ -57684,7 +57684,7 @@
 							null,
 							_react2.default.createElement(
 								_reactRouterDom.Link,
-								{ to: '/' },
+								{ to: '/verkstedt-challenge' },
 								'Back to Trending'
 							)
 						)
