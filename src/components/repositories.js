@@ -78,7 +78,7 @@ class Repositories extends Component {
 					<img src="/img/github.png"/>
 					<h1>Trending Repositories Created in the Last Week</h1>
 					<h2>{weekAgo} - {today}</h2>
-					<h4><Link to={'/saved'}>View Your Saved Repositories</Link></h4>
+					<h4><Link to={'/trending/saved'}>View Your Saved Repositories</Link></h4>
 				</div>
 				<div className="main">
 					{/*<SearchBar />*/}
